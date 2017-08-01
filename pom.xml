@@ -75,6 +75,16 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>io.ddavison</groupId>
+            <artifactId>conductor</artifactId>
+            <version>1.1</version>
+        </dependency>
 
     </dependencies>
 
@@ -93,8 +103,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <!-- Configure failsafe plugin for Integration  -->
-            <!-- SEE ALSO PROFILE SPECIFIC CONFIGURATION_ERROR FOR coverafe !!! -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -113,19 +121,10 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- for elements see http://maven.apache.org/surefire/maven-failsafe-plugin/integration-test-mojo.html -->
                 <configuration>
-                    <!-- all it it packacke -->
                     <includes>
                         <include>${maven.failsafe.include}</include>
                     </includes>
-                    <!--
-                    <destFile>${sonar.jacoco.itReportPath}</destFile>
-                    <forkCount>1</forkCount>
-                    <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
-                    <argLine>-XX:MaxPermSize=128m -Xmx256m</argLine>
-                    -->
-                    <!-- Force alphabetical order to have a reproducible build -->
                     <runOrder>alphabetical</runOrder>
                 </configuration>
             </plugin>
@@ -179,5 +178,12 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-
+    <profiles>
+		<profile>
+           <id>seleniumTests</id>
+            <properties>
+                <maven.surefire.include>com/kuhniverse/selenium/**/*.java</maven.surefire.include>
+            </properties>
+		</profile>
+    </profiles>
 </project>
