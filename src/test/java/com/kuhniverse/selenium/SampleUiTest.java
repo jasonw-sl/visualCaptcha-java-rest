@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 @Config(
         browser = Browser.CHROME,
-        url = "http://localhost:8080/"
+        url = "http://localhost:8888/"
 )
 public class SampleUiTest extends Locomotive {
     @Before
