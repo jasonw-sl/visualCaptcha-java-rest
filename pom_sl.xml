@@ -27,7 +27,7 @@
         <spring.version>4.1.6.RELEASE</spring.version>
         <docker.image.prefix>captcha</docker.image.prefix>
         <maven.surefire.version>2.17</maven.surefire.version>
-        <maven.failsafe.version>2.17</maven.failsafe.version>
+        <maven.failsafe.version>2.20.1</maven.failsafe.version>
         <maven.surefire.include>com/kuhniverse/ut/**/*.java</maven.surefire.include>
         <maven.failsafe.include>com/kuhniverse/it/**/*.java</maven.failsafe.include>
     </properties>
