@@ -3,8 +3,8 @@
 
 command -v mvn >/dev/null 2>&1 || { echo >&2 "Could not locate mvn, please make sure its in the PATH"; exit 1; }
 
-if [ ! -f sl_token.txt ]; then
-  echo Please create a file called sl_token.txt with a valid agent token from SeaLights
+if [ ! -f sltoken.txt ]; then
+  echo Please download a token (sltoken.txt) from the SeaLights dashboard and place it here
   exit 1
 fi
 BUILD_NUMBER=$(date +%Y%m%d%H%M%S)
@@ -37,7 +37,7 @@ if [ ! -f sl-build-scanner.jar ]; then
 fi
 cd ..
 
-java -jar SeaLights/sl-build-scanner.jar -config -tokenfile sl_token.txt -appname "visualCaptcha" -branchname "master" -buildname "${BUILD_NUMBER}" -pi "com.kuhniverse.*"
+java -jar SeaLights/sl-build-scanner.jar -config -tokenfile sltoken.txt -appname "visualCaptcha" -branchname "master" -buildname "${BUILD_NUMBER}" -pi "com.kuhniverse.*"
 
 mvn -f pom_sl.xml clean install  -Dmaven.test.failure.ignore=true -Psealights_build
 
