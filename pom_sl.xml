@@ -94,7 +94,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                	<jvmArguments>-javaagent:SeaLights/sl-test-listener.jar -Dsl.tokenFile=sl_token.txt -Dsl.buildSessionIdFile=buildSessionId.txt -Dserver.port=8888</jvmArguments>
+                	<jvmArguments>-javaagent:SeaLights/sl-test-listener.jar -Dsl.tokenFile=sltoken.txt -Dsl.buildSessionIdFile=buildSessionId.txt -Dserver.port=8888</jvmArguments>
                 </configuration>
             </plugin>
             <plugin>
@@ -128,7 +128,7 @@
                     <includes>
                         <include>${maven.failsafe.include}</include>
                     </includes>
-                    <argLine>-javaagent:SeaLights/sl-test-listener.jar -Dsl.tokenFile=sl_token.txt -Dsl.buildSessionIdFile=buildSessionId.txt -Dsl.testStage="Integration Tests"</argLine>
+                    <argLine>-javaagent:SeaLights/sl-test-listener.jar -Dsl.tokenFile=sltoken.txt -Dsl.buildSessionIdFile=buildSessionId.txt -Dsl.testStage="Integration Tests"</argLine>
                     <runOrder>alphabetical</runOrder>
                 </configuration>
             </plugin>
@@ -195,7 +195,7 @@
                         <artifactId>sealights-maven-plugin</artifactId>
                         <version>1.4.13</version>
                         <configuration>
-                            <tokenFile>sl_token.txt</tokenFile>
+                            <tokenFile>sltoken.txt</tokenFile>
                             <buildSessionIdFile>buildSessionId.txt</buildSessionIdFile>
                             <createBuildSessionId>false</createBuildSessionId>
                             <moduleName>${project.name}</moduleName>
@@ -233,7 +233,7 @@
                         <artifactId>sealights-maven-plugin</artifactId>
                         <version>1.4.13</version>
                         <configuration>
-                            <tokenFile>sl_token.txt</tokenFile>
+                            <tokenFile>sltoken.txt</tokenFile>
                             <buildSessionIdFile>buildSessionId.txt</buildSessionIdFile>
                             <createBuildSessionId>false</createBuildSessionId>
                             <moduleName>${project.name}</moduleName>
