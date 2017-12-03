@@ -4,7 +4,7 @@
 command -v mvn >/dev/null 2>&1 || { echo >&2 "Could not locate mvn, please make sure its in the PATH"; exit 1; }
 
 if [ ! -f sltoken.txt ]; then
-  echo Please download a token (sltoken.txt) from the SeaLights dashboard and place it here
+  echo "Please download a token (sltoken.txt) from the SeaLights dashboard and place it here"
   exit 1
 fi
 BUILD_NUMBER=$(date +%Y%m%d%H%M%S)
