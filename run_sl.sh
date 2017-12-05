@@ -37,7 +37,7 @@ if [ ! -f sl-build-scanner.jar ]; then
 fi
 cd ..
 
-java -jar SeaLights/sl-build-scanner.jar -config -tokenfile sltoken.txt -appname "visualCaptcha" -branchname "master" -buildname "${BUILD_NUMBER}" -pi "com.kuhniverse.*"
+java -jar SeaLights/sl-build-scanner.jar -config -tokenfile sltoken.txt -appname "visualCaptcha" -branchname "master" -buildname "${RANDOM}" -pi "com.kuhniverse.*"
 
 mvn -f pom_sl.xml clean install  -Dmaven.test.failure.ignore=true -Psealights_build
 
